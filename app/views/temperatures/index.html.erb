@@ -1,0 +1,44 @@
+<div class="container-fluid">
+<div class="col s12 m2 hide-on-med-and-down" style="padding-left: 0; padding-right: 5px">
+  <%= render 'layouts/sidebar' %>
+</div>
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="col-md-8">
+  <h1>Temperatures</h1>
+  <br>
+  <%= line_chart [ {name: "Maximum Temperature", data: Temperature.all.inject({}) {|res, v| res[v[:created_at]] = v.maximum_temperature; res }}, {name: "Minimum Temperature", data: Temperature.all.inject({}) {|res, v| res[v[:created_at]] =
+      v.minimum_temperature; res }}, ] %>
+      <br>
+<b>  <%= link_to 'New Temperature', new_temperature_path %> </b>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Date</th>
+        <th>Minimum temperature</th>
+        <th>Maximum temperature</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @temperatures.each do |temperature| %>
+      <tr>
+        <td><%= temperature.time %></td>
+        <td><%= temperature.date %></td>
+        <td><%= temperature.minimum_temperature %></td>
+        <td><%= temperature.maximum_temperature %></td>
+        <td><%= link_to 'Show', temperature %></td>
+        <td><%= link_to 'Edit', edit_temperature_path(temperature) %></td>
+        <td><%= link_to 'Destroy', temperature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+</div>
+</div>

@@ -1,0 +1,8 @@
+<%= render 'layouts/sidebar' %>
+<h1 class="page-header">Dashboard</h1>
+<div class="row">
+  <div class="col-md-6"><%= line_chart [ {name: "Maximum Temperature", data: Temperature.all.inject({}) {|res, v| res[v[:created_at]] = v.maximum_temperature; res }}, {name: "Minimum Temperature", data: Temperature.all.inject({}) {|res, v|
+    res[v[:created_at]] = v.minimum_temperature; res }}, ] %>
+  </div>
+  <div class="col-md-6"></div>
+</div>

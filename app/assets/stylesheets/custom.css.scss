@@ -1,0 +1,68 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input,
+textarea {
+  display: block;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.form-group {
+  width: 500px;
+}
+
+.about p {
+  text-align: center;
+  margin-left: 35rem;
+  margin-right: 35rem;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.about h1 {
+  text-align: center;
+}
+
+.contact {
+  text-align: center;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  background-image: url('damian-zaleski-843.jpg');
+  background-position: 0 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  margin: 30px;
+}
+
+.navbar-default{
+  background-color: #20B2AA;;
+
+}
+.navbar-default .navbar-brand {
+  font-family: 'Abel', sans-serif;
+  font-weight:400;
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+.navbar-default .navbar-nav >li >a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color:#344F8C;
+}
